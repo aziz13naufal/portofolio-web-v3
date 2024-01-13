@@ -1,3 +1,5 @@
+"use client"
+
 import Navbar from '@/components/navbar/Navbar'
 import BlobSVG from '@/public/svgs/blob'
 import Facebook from '@/public/svgs/facebook'
@@ -6,16 +8,40 @@ import GmailSVG from '@/public/svgs/gmail'
 import Instagram from '@/public/svgs/instagram'
 import Telegram from '@/public/svgs/telegram'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Home = () => {
+  const [responsiveDev, setResponsiveDev] = useState<boolean>(false);
+  const [showNavbar, setShowNavbar] = useState<boolean>(false);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const navbarHandler = () => {
+    if(window.scrollY > 250) {
+      setShowNavbar(true)
+    } else {
+      setShowNavbar(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', navbarHandler)
+    return () => {
+      window.removeEventListener('scroll', navbarHandler)
+    }
+  }, []);
+
   return (
-    <div>
-      <div className="px-32">
-        <Navbar />
+    <div className={`relative ${responsiveDev && "xl:bg-red-200 lg:bg-blue-200 md:bg-red-200 sm:bg-blue-200"}`}>
+      {/* ignore this shit */}
+      <div id='home' className=""></div>
+      <div id="responsive-dev" className="w-[30px] h-[30px] bg-zinc-700 cursor-pointer bottom-0 left-0 ml-4 mb-4 fixed z-30" onClick={() => setResponsiveDev(!responsiveDev)}>
       </div>
 
-      <section id='home' className='mt-12 px-32'>
+      <div className={`px-[8.1%] w-full relative ${showNavbar && 'py-[34px]'}`}>
+        <Navbar showNavbar={showNavbar}/>
+      </div>
+
+      <section id='home' className='mt-12 px-[8.1%]'>
         <div className="bg-zinc-200 w-full h-[300px] object-cover ">
           <img src="/images/kaneki.jpeg" alt="bg" className='w-full h-[300px] object-cover' />
           {/* <img src="/gifs/goku-kid.gif" alt="bg" className='w-full h-[300px] object-cover' /> */}
@@ -32,10 +58,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='about' className='mt-12 bg-[#F1F5FB] w-full px-32 flex flex-row items-center gap-x-10 py-10'>
+      {/* <section id='about' className='mt-12 bg-[#F1F5FB] w-full px-[8.1%] hidden flex-row items-center gap-x-10 py-10'>
         <div className="">
           <img src="/gifs/goku.gif" alt="rei" className='image-blob' />
-          {/* <video src="/gifs/gohanssj2.mp4" autoPlay loop muted className='image-blob' /> */}
         </div>
         <div className="">
           <div className="">
@@ -52,9 +77,30 @@ const Home = () => {
             <p className='mt-2'>That's all, thank you.</p>
           </div>
         </div>
+      </section> */}
+
+      <section id='about' className='mt-12 bg-[#F1F5FB] w-full px-[8.1%] flex flex-row items-center gap-x-7 py-10 lg:flex-col lg:gap-x-0 lg:gap-y-7'>
+        <div className="relative w-[40%] lg:w-full lg:flex lg:justify-center">
+          <img src="/images/kaneki.jpeg" alt="kaneki" className='lg:w-full' />
+        </div>
+        
+
+        <div className="w-[60%] lg:w-full">
+          <span className='relative w-fit text-xl font-semibold text-primary'>Let me introduce myself!
+            <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
+          </span>
+
+          <div className="text-lg text-[#5F5F5F] mt-6">
+            <p>I really like the look of a design, and for me front end website developer is a field of expertise that I am very interested in. And for now, the framework that I really like is NEXTJS. because it makes the development process easier. I hope I continue to grow and seek more inspiration.</p>
+
+            <p className='mt-2'>Other than that, about myself, I was born on August 14, 2001 in Bandung.</p>
+
+            <p className='mt-2'>That's all, thank you.</p>
+          </div>
+        </div>
       </section>
 
-      <section id='skills' className='mt-12 px-32'>
+      <section id='skills' className='mt-12 px-[8.1%]'>
         <div className="">
           <span className='relative w-fit text-xl font-semibold text-primary'>My Skills
               <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
@@ -80,7 +126,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='projects' className='mt-12 px-32'>
+      <section id='projects' className='mt-12 px-[8.1%]'>
         <div className="">
           <span className='relative w-fit text-xl font-semibold text-primary'>My Projects
               <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
@@ -148,7 +194,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='contact' className='mt-12 px-32 bg-[#F1F5FB] py-10'>
+      <section id='contact' className='mt-12 px-[8.1%] bg-[#F1F5FB] py-10'>
         <div className="">
           <span className='relative w-fit text-xl font-semibold text-primary'>Contact Me
               <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
@@ -156,7 +202,7 @@ const Home = () => {
         </div>
 
         <div className="mt-12 text-lg text-[#5F5F5F]">
-            <p>I'm excited to connect with everyone, so please don't hesitate to get in touch with me by following my social media bellow :</p>
+            <p>I'm excited to connect with everyone, so please don't hesitate to get in touch with me by following my social media bellow:</p>
 
             <div className="mt-6 flex flex-row gap-x-3">
               <a href='mailto:aziz13naufal@gmail.com' target='_blank' className=''>
@@ -178,7 +224,7 @@ const Home = () => {
         </div>
 
         <div className="form mt-12">
-          <div className="flex flex-row w-full gap-x-4">
+          <div className="flex flex-row w-full gap-x-4 lg:flex-col lg:gap-y-3">
             <div className="w-full">
               <label htmlFor="">Name</label>
               <input type="text" name='name' placeholder='Enter Name' />
