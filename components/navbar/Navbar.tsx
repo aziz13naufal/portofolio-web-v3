@@ -10,7 +10,7 @@ const Navbar = ({showNavbar}: any) => {
   const [contactLink, setContactLink] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (typeof document !== 'undefined') { 
+    // if (typeof document !== 'undefined') { 
       const homeLink = document.getElementById('homeLink');
       const aboutLink = document.getElementById('aboutLink');
       const skillLink = document.getElementById('skillLink');
@@ -22,7 +22,7 @@ const Navbar = ({showNavbar}: any) => {
       setSkillLink(skillLink);
       setProjectLink(projectLink);
       setContactLink(contactLink);
-    }
+    // }
   },[])
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
