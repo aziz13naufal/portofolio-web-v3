@@ -1,14 +1,29 @@
-"use client"
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 const Navbar = ({showNavbar}: any) => {
 
-  const homeLink = document.getElementById('homeLink') || null;
-  const aboutLink = document.getElementById('aboutLink') || null;
-  const skillLink = document.getElementById('skillLink') || null;
-  const projectLink = document.getElementById('projectLink') || null;
-  const contactLink = document.getElementById('contactLink') || null;
+  const [homeLink, setHomeLink] = useState<HTMLElement | null>(null);
+  const [aboutLink, setAboutLink] = useState<HTMLElement | null>(null);
+  const [skillLink, setSkillLink] = useState<HTMLElement | null>(null);
+  const [projectLink, setProjectLink] = useState<HTMLElement | null>(null);
+  const [contactLink, setContactLink] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') { 
+      const homeLink = document.getElementById('homeLink');
+      const aboutLink = document.getElementById('aboutLink');
+      const skillLink = document.getElementById('skillLink');
+      const projectLink = document.getElementById('projectLink');
+      const contactLink = document.getElementById('contactLink');
+
+      setHomeLink(homeLink);
+      setAboutLink(aboutLink);
+      setSkillLink(skillLink);
+      setProjectLink(projectLink);
+      setContactLink(contactLink);
+    }
+  },[])
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
