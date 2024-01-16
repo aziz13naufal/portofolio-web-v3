@@ -40,7 +40,8 @@ const Home = () => {
   return (
     <div className={`relative ${responsiveDev && "xl:bg-red-200 lg:bg-blue-200 md:bg-red-200 sm:bg-blue-200"}`}>
       {/* ignore this shit */}
-      <div id='home' className=""></div>
+      <section id='home' className="">
+
       <div id="responsive-dev" className="w-[30px] h-[30px] bg-zinc-700 cursor-pointer bottom-0 left-0 ml-4 mb-4 fixed z-30" onClick={() => setResponsiveDev(!responsiveDev)}>
       </div>
 
@@ -48,7 +49,7 @@ const Home = () => {
         <Navbar showNavbar={showNavbar}/>
       </div>
 
-      <section id='home' className='mt-12 px-[8.1%]'>
+      <div className='mt-12 px-[8.1%]'>
         <div className="bg-zinc-200 w-full h-[300px] object-cover ">
           <img src="/images/kaneki.jpeg" alt="bg" className='w-full h-[300px] object-cover' />
           {/* <img src="/gifs/goku-kid.gif" alt="bg" className='w-full h-[300px] object-cover' /> */}
@@ -63,6 +64,7 @@ const Home = () => {
             </span>
           </p>
         </div>
+      </div>
       </section>
 
       {/* <section id='about' className='mt-12 bg-[#F1F5FB] w-full px-[8.1%] hidden flex-row items-center gap-x-10 py-10'>
@@ -88,7 +90,7 @@ const Home = () => {
       <div data-aos="fade-up">
         <section id='about' className='mt-12 bg-[#F1F5FB] w-full px-[8.1%] flex flex-row items-center gap-x-7 py-10 lg:flex-col lg:gap-x-0 lg:gap-y-7'>
           <div className="relative w-[40%] lg:w-full lg:flex lg:justify-center">
-            <img src="/images/kaneki.jpeg" alt="kaneki" className='lg:w-full' />
+            <img src="/images/kaneki.jpeg" alt="kaneki" className='lg:w-full shadow-md' />
           </div>
 
 
@@ -98,7 +100,7 @@ const Home = () => {
             </span>
 
             <div className="text-lg text-[#5F5F5F] mt-6">
-              <p>I really like the look of a design, and for me front end website developer is a field of expertise that I am very interested in. And for now, the framework that I really like is NEXTJS. because it makes the development process easier. I hope I continue to grow and seek more inspiration.</p>
+              <p>I really like the look of a design, and for me front end website developer is a field of expertise that I am very interested in. And for now, the framework that I really like is NEXTJS. Because it makes the development process easier. I hope I can continue to grow and seek more inspiration.</p>
 
               <p className='mt-2'>Other than that, about myself, I was born on August 14, 2001 in Bandung.</p>
 

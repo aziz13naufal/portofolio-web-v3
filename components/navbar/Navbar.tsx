@@ -10,7 +10,6 @@ const Navbar = ({showNavbar}: any) => {
   const [contactLink, setContactLink] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    // if (typeof document !== 'undefined') { 
       const homeLink = document.getElementById('homeLink');
       const aboutLink = document.getElementById('aboutLink');
       const skillLink = document.getElementById('skillLink');
@@ -22,10 +21,10 @@ const Navbar = ({showNavbar}: any) => {
       setSkillLink(skillLink);
       setProjectLink(projectLink);
       setContactLink(contactLink);
-    // }
   },[])
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
     <div className={`navbar flex flex-row items-center justify-between py-5 z-10 ${showNavbar && 'fixed w-full top-0 left-0 right-0 px-[8.1%] bg-white border-b border-b-zinc-300'}`}>
@@ -37,7 +36,7 @@ const Navbar = ({showNavbar}: any) => {
         <ul 
           className={`text-[#5F5F5F] flex flex-row gap-x-5 
           ${isOpen ? 
-            'md:flex md:absolute md:left-0 md:right-0 md:top-0 md:bottom-0 md:justify-center md:flex-col md:mt-[219px]' : 
+            'md:flex md:absolute md:left-0 md:right-0 md:top-0 md:bottom-0 md:justify-center md:flex-col md:mt-[218px]' : 
             'md:hidden'}`}>
           <li 
             className={`relative ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
