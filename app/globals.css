@@ -71,10 +71,14 @@
     background: #6b9b91;
 }
 
-/* .navbar nav ul li::before {
+.navbar nav ul li::before {
         @apply absolute bottom-0 left-0 content-[""] h-0 w-0 duration-500 border-b border-b-zinc-500
     }
 
 .navbar nav ul li:hover::before {
         width: 100%;
-} */
+}
+
+.navbar nav ul .active::before {
+        @apply  w-full
+}

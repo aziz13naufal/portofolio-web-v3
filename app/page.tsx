@@ -17,6 +17,7 @@ const Home = () => {
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
   // const [isOpen, setIsOpen] = useState<boolean>(false);
 
+
   const navbarHandler = () => {
     if(window.scrollY > 250) {
       setShowNavbar(true)
@@ -90,7 +91,7 @@ const Home = () => {
       <div data-aos="fade-up">
         <section id='about' className='mt-12 bg-[#F1F5FB] w-full px-[8.1%] flex flex-row items-center gap-x-7 py-10 lg:flex-col lg:gap-x-0 lg:gap-y-7'>
           <div className="relative w-[40%] lg:w-full lg:flex lg:justify-center">
-            <img src="/images/kaneki.jpeg" alt="kaneki" className='lg:w-full shadow-md' />
+            <img src="/images/kaneki.jpeg" alt="kaneki" className='lg:w-full shadow-md h-[270px] object-cover' />
           </div>
 
 
@@ -118,7 +119,7 @@ const Home = () => {
             </span>
           </div>
 
-          <div className="skills w-full mt-10 flex flex-row">
+          {/* <div className="skills w-full mt-10 flex flex-row">
             <div className="skill-card">
               <img src="/images/logo/html.png" className='smooth-transition' />
               <img src="/images/logo/css.png" className='ml-1' />
@@ -132,6 +133,33 @@ const Home = () => {
               <img src="/images/logo/bootstrap.png" className='ml-4'/>
               <img src="/images/logo/postgresql.png" className='ml-4'/>
               <img src="/images/logo/mysql.png" className='ml-4'/>
+              <img src="/images/logo/mongodb.png" className='ml-4'/>
+            </div>
+          </div> */}
+
+          <div className="skills w-full mt-10 flex flex-row overflow-x-auto gap-x-5 pb-3">
+            <div className="h-[130px] bg-[#F1F5FB] flex flex-row flex-shrink-0 pl-4 pr-5 py-6 rounded-md shadow-md">
+              <img src="/images/logo/html.png" className='smooth-transition' />
+              <img src="/images/logo/css.png" className='ml-1' />
+              <img src="/images/logo/js.png" className='ml-2' />
+              <img src="/images/logo/ts.png" className='ml-4' />
+              <img src="/images/logo/nodejs.png" className='ml-4' />
+            </div>
+
+            <div className="h-[130px] bg-[#F1F5FB] flex flex-row flex-shrink-0 pr-4  py-6 rounded-md shadow-md">
+              <img src="/images/logo/express.png" className='ml-4' />
+              <img src="/images/logo/react.png" className='ml-4' />
+              <img src="/images/logo/nextjs.png" className='ml-4'/>
+            </div>
+
+            <div className="h-[130px] bg-[#F1F5FB] flex flex-row flex-shrink-0 pl-1 pr-4 py-6 rounded-md shadow-md">
+              <img src="/images/logo/tailwind.png" className='ml-4 h-[60px] mt-2'/>
+              <img src="/images/logo/bootstrap.png" className='ml-4'/>
+            </div>
+
+            <div className="h-[130px] bg-[#F1F5FB] flex flex-row flex-shrink-0 px-2 py-6 rounded-md shadow-md">
+              <img src="/images/logo/mysql.png" className='ml-4'/>
+              <img src="/images/logo/postgresql.png" className='ml-4'/>
               <img src="/images/logo/mongodb.png" className='ml-4'/>
             </div>
           </div>
