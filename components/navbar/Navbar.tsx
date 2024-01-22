@@ -40,46 +40,6 @@ const Navbar = ({showNavbar}: any) => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const [isHomeActive, setIsHomeActive] = useState<boolean>(false);
-  const [isAboutActive, setIsAboutActive] = useState<boolean>(false);
-  const [isSkillsActive, setIsSkillsActive] = useState<boolean>(false);
-  const [isProjectsActive, setIsProjectsActive] = useState<boolean>(false);
-  const [isContactActive, setIsContactActive] = useState<boolean>(false);
-
-  useEffect(() => {
-    if(windowY >= 0 && windowY < 536) {
-      setIsHomeActive(true);
-    } else {
-      setIsHomeActive(false)
-    }
-
-    if(windowY >= 536 && windowY < 1298) {
-      setIsAboutActive(true);
-    } else {
-      setIsAboutActive(false)
-    }
-
-    if(windowY >= 1298 && windowY < 1466) {
-      setIsSkillsActive(true);
-    } else {
-      setIsSkillsActive(false)
-    }
-
-    if(windowY >= 1466 && windowY < 2225) {
-      setIsProjectsActive(true);
-    } else {
-      setIsProjectsActive(false)
-    }
-
-    if(windowY >= 2225) {
-      setIsContactActive(true);
-    } else {
-      setIsContactActive(false)
-    }
-
-
-  }, [windowY])
-
   return (
     <div className={`navbar flex flex-row items-center justify-between py-5 z-10 ${showNavbar && 'fixed w-full top-0 left-0 right-0 px-[8.1%] bg-white border-b border-b-zinc-300'}`}>
       <div className="">
@@ -93,7 +53,7 @@ const Navbar = ({showNavbar}: any) => {
             'md:flex md:absolute md:left-0 md:right-0 md:top-0 md:bottom-0 md:justify-center md:flex-col md:mt-[218px]' : 
             'md:hidden'}`}>
           <li 
-            className={`relative ${isHomeActive && 'active'} ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
+            className={`relative ${isOpen && 'md:border-t md:border-t-zinc-300 md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
             onClick={() => {
               homeLink?.click()
               setIsOpen(false)
@@ -101,7 +61,7 @@ const Navbar = ({showNavbar}: any) => {
             <Link id='homeLink' href={"#home"} className='hover:text-[#393939]'>HOME</Link>
           </li>
           <li 
-            className={`relative ${isAboutActive && 'active'} ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
+            className={`relative ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
             onClick={() => {
               aboutLink?.click()
               setIsOpen(false)
@@ -109,7 +69,7 @@ const Navbar = ({showNavbar}: any) => {
             <Link id='aboutLink' href={"#about"} className='hover:text-[#393939]'>ABOUT</Link>
           </li>
           <li 
-            className={`relative ${isSkillsActive && 'active'} ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
+            className={`relative ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
             onClick={() => {
               skillLink?.click()
               setIsOpen(false)
@@ -117,7 +77,7 @@ const Navbar = ({showNavbar}: any) => {
             <Link id='skillLink' href={"#skills"} className='hover:text-[#393939]'>SKILLS</Link>
           </li>
           <li 
-            className={`relative ${isProjectsActive && 'active'} ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
+            className={`relative ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
             onClick={() => {
               projectLink?.click()
               setIsOpen(false)
@@ -125,7 +85,7 @@ const Navbar = ({showNavbar}: any) => {
             <Link id='projectLink' href={"#projects"} className='hover:text-[#393939]'>PROJECTS</Link>
           </li>
           <li 
-            className={`relative ${isContactActive && 'active'} ${isOpen && 'md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
+            className={`relative ${isOpen && 'md:border-b md:border-b-zinc-300 md:cursor-pointer md:px-[8.1%] md:py-5 md:bg-white'}`}
             onClick={() => {
               contactLink?.click()
               setIsOpen(false)
