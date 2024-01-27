@@ -11,6 +11,18 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import HTMLIcon from '@/public/svgs/html'
+import CSSIcon from '@/public/svgs/css'
+import JSIcon from '@/public/svgs/js'
+import TSIcon from '@/public/svgs/ts'
+import ExpressJsIcon from '@/public/svgs/expressJs'
+import ReactIcon from '@/public/svgs/reactJs'
+import NextJsIcon from '@/public/svgs/nextJs'
+import TailwindCSSIcon from '@/public/svgs/tailwindCSS'
+import BootstrapIcon from '@/public/svgs/bootstrap'
+import MySQLIcon from '@/public/svgs/mysql'
+import PostgreSQLIcon from '@/public/svgs/postgresql'
+import MongoDBIcon from '@/public/svgs/mongoDB'
 
 const Home = () => {
   const [responsiveDev, setResponsiveDev] = useState<boolean>(false);
@@ -90,34 +102,7 @@ const Home = () => {
         </section>
       </div>
 
-      <div data-aos="fade-up">
-        <section id='experience' className='mt-12 px-[8.1%]'>
-          <div className="">
-            <span className='relative w-fit text-xl font-semibold text-primary'>My Experience
-                <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
-            </span>
-          </div>
-
-          <div className="w-full mt-10 flex md:flex-col gap-5">
-            <div className="card w-full bg-[#F1F5FB] border shadow-md rounded-md p-5 text-[#5F5F5F]">
-              <h1 className='text-xl font-semibold text-primary'>Host Data</h1>
-              <p className='font-semibold'>Freelance - Front End Web Developer</p>
-              <p className='text-xs'>21 Jan 2023</p>
-              <p className='mt-2'>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-              <p className='mt-2 truncate'>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing</p>
-            </div>
-
-            <div className="card w-full bg-[#F1F5FB] border shadow-md rounded-md p-5 text-[#5F5F5F]">
-              <h1 className='text-xl font-semibold text-primary'>Host Data</h1>
-              <p className='font-semibold'>Freelance - Front End Web Developer</p>
-              <p className='text-xs'>21 Jan 2023</p>
-              <p className='mt-2'>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <div data-aos="fade-up">
+      {/* <div data-aos="fade-up">
         <section id='skills' className='mt-12 px-[8.1%]'>
           <div className="">
             <span className='relative w-fit text-xl font-semibold text-primary'>My Skills
@@ -150,6 +135,34 @@ const Home = () => {
               <img src="/images/logo/postgresql.png" className='ml-4'/>
               <img src="/images/logo/mongodb.png" className='ml-4'/>
             </div>
+          </div>
+        </section>
+      </div> */}
+
+      <div data-aos="fade-up">
+        <section id='skills' className='mt-12 px-[8.1%]'>
+          <div className="">
+            <span className='relative w-fit text-xl font-semibold text-primary'>My Skills
+                <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
+            </span>
+          </div>
+
+          <div className="skills w-full mt-10 flex flex-wrap items-center justify-center gap-y-4">
+            <HTMLIcon className='w-32 h-32 -ml-4' />
+            <CSSIcon className='w-32 h-32 -ml-3' />
+            <JSIcon className='w-[133px] h-[133px] -ml-3' />
+            <TSIcon className='w-[133px] h-[133px] -ml-2' />
+
+            <ExpressJsIcon className="border border-zinc-300 bg-zinc-100 p-2 ml-2" />
+            <ReactIcon className="w-32 h-32 ml-1" />
+            <NextJsIcon className="w-28 h-28 -ml-2" />
+            
+            <TailwindCSSIcon className="ml-2 w-32 h-32" />
+            <BootstrapIcon className="w-32 h-32 ml-2" />
+
+            <MySQLIcon className="w-32 h-32 ml-4" />
+            <PostgreSQLIcon className="w-[105px] h-[105px] ml-4" />
+            <MongoDBIcon className="w-[105px] h-[105px]" />
           </div>
         </section>
       </div>
