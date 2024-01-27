@@ -4,19 +4,19 @@ import React, { useEffect, useState } from 'react'
 const Navbar = ({showNavbar}: any) => {
 
   
-  const [windowY, setWindowY] = useState<any>();
-  console.log(windowY)
+  // const [windowY, setWindowY] = useState<any>();
+  // console.log(windowY)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setWindowY(window.scrollY);
-    }
-    window.addEventListener('scroll', handleScroll);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setWindowY(window.scrollY);
+  //   }
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [])
 
   const [homeLink, setHomeLink] = useState<HTMLElement | null>(null);
   const [aboutLink, setAboutLink] = useState<HTMLElement | null>(null);

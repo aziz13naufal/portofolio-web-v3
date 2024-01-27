@@ -23,6 +23,7 @@ import BootstrapIcon from '@/public/svgs/bootstrap'
 import MySQLIcon from '@/public/svgs/mysql'
 import PostgreSQLIcon from '@/public/svgs/postgresql'
 import MongoDBIcon from '@/public/svgs/mongoDB'
+import Blob2 from '@/public/svgs/blob2'
 
 const Home = () => {
   const [responsiveDev, setResponsiveDev] = useState<boolean>(false);
@@ -82,7 +83,8 @@ const Home = () => {
       <div data-aos="fade-up">
         <section id='about' className='mt-12 bg-[#F1F5FB] w-full px-[8.1%] flex flex-row items-center gap-x-7 py-10 lg:flex-col lg:gap-x-0 lg:gap-y-7'>
           <div className="relative w-[40%] lg:w-full lg:flex lg:justify-center">
-            <img src="/images/kaneki.jpeg" alt="kaneki" className='lg:w-full shadow-md h-[270px] object-cover' />
+            {/* <img src="/images/kaneki.jpeg" alt="kaneki" className='lg:w-full shadow-md h-[270px] object-cover' /> */}
+            <Blob2 className="mr-0 lg:-mr-5" />
           </div>
 
 
