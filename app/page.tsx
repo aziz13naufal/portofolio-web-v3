@@ -83,10 +83,10 @@ const Home = () => {
       <div data-aos="fade-up">
         <section id='about' className='w-full mt-12 bg-[#f1f5fb] py-10 px-[8.1%] flex items-center lg:flex-col'>
           <div className="">
-            <Blob2 className='w-[470px] h-[470px] sm:w-[300px] sm:h-[300px] sm:-mr-3' />
+            <Blob2 className='w-[470px] h-[470px] sm:w-[300px] sm:h-[320px] sm:-mr-3' />
           </div>
 
-          <div className="">
+          <div className="sm:mt-5">
             <span className='relative w-fit text-xl font-semibold text-primary'>Let me introduce myself!
               <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
             </span>
@@ -101,43 +101,6 @@ const Home = () => {
           </div>
         </section>
       </div>
-
-      {/* <div data-aos="fade-up">
-        <section id='skills' className='mt-12 px-[8.1%]'>
-          <div className="">
-            <span className='relative w-fit text-xl font-semibold text-primary'>My Skills
-                <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
-            </span>
-          </div>
-
-          <div className="skills w-full mt-10 flex flex-row overflow-x-auto gap-x-5 pb-3">
-            <div className="h-[130px] bg-[#F1F5FB] flex flex-row flex-shrink-0 pl-4 pr-5 py-6 rounded-md shadow-md">
-              <img src="/images/logo/html.png" className='smooth-transition' />
-              <img src="/images/logo/css.png" className='ml-1' />
-              <img src="/images/logo/js.png" className='ml-2' />
-              <img src="/images/logo/ts.png" className='ml-4' />
-              <img src="/images/logo/nodejs.png" className='ml-4' />
-            </div>
-
-            <div className="h-[130px] bg-[#F1F5FB] flex flex-row flex-shrink-0 pr-4  py-6 rounded-md shadow-md">
-              <img src="/images/logo/express.png" className='ml-4' />
-              <img src="/images/logo/react.png" className='ml-4' />
-              <img src="/images/logo/nextjs.png" className='ml-4'/>
-            </div>
-
-            <div className="h-[130px] bg-[#F1F5FB] flex flex-row flex-shrink-0 pl-1 pr-4 py-6 rounded-md shadow-md">
-              <img src="/images/logo/tailwind.png" className='ml-4 h-[60px] mt-2'/>
-              <img src="/images/logo/bootstrap.png" className='ml-4'/>
-            </div>
-
-            <div className="h-[130px] bg-[#F1F5FB] flex flex-row flex-shrink-0 px-2 py-6 rounded-md shadow-md">
-              <img src="/images/logo/mysql.png" className='ml-4'/>
-              <img src="/images/logo/postgresql.png" className='ml-4'/>
-              <img src="/images/logo/mongodb.png" className='ml-4'/>
-            </div>
-          </div>
-        </section>
-      </div> */}
 
       <div data-aos="fade-up">
         <section id='skills' className='mt-12 px-[8.1%]'>
