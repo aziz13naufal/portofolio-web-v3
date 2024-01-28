@@ -13,8 +13,6 @@
 }
 
 .masking {
-    width: 470px;
-    height: 470px;
     background: url("/images/kaneki.jpeg") no-repeat center;
     background-size: cover;
     mask-image: url(/svgs/blob2.svg);
