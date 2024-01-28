@@ -24,6 +24,10 @@ import MySQLIcon from '@/public/svgs/mysql'
 import PostgreSQLIcon from '@/public/svgs/postgresql'
 import MongoDBIcon from '@/public/svgs/mongoDB'
 import Blob2 from '@/public/svgs/blob2'
+import FileCodeIcon from '@/public/svgs/code'
+import GlobeIcon from '@/public/svgs/globe'
+import ExportIcon from '@/public/svgs/export'
+import CodeIcon from '@/public/svgs/code'
 
 const Home = () => {
   const [responsiveDev, setResponsiveDev] = useState<boolean>(false);
@@ -103,6 +107,54 @@ const Home = () => {
       </div>
 
       <div data-aos="fade-up">
+        <section id='experience' className='mt-12 px-[8.1%]'>
+          <div className="">
+            <span className='relative w-fit text-xl font-semibold text-primary'>My Experience
+                <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
+            </span>
+          </div>
+
+          <div className="w-full relative flex flex-col gap-y-7 mt-10">
+            <div className="absolute top-0 left-0 w-1 ml-[6px] h-full bg-sky-300 rounded-full -z-10"></div>
+
+            <div className="flex items-start w-full gap-x-7 sm:gap-x-4 z-0">
+              <i className="bg-sky-500 w-fit h-fit p-2 rounded-full" />
+              <div className="w-full bg-sky-500 rounded-md">
+                <div className="p-4 text-white ">
+                  <h1 className='font-semibold text-xl'>Host Data</h1>
+                  <p className='text-sm'>June 2023</p>
+                  <p className='mt-2'>Freelance as a Front End Website Developer.</p>
+                  <ul className='mt-2 ml-6 font-semibold'>
+                    <li className='list-disc'>Create a responsive website display</li>
+                    <li className='list-disc'>Fixed the layout of an existing website</li>
+                    <li className='list-disc'>Fixed the layout of an existing website</li>
+                  </ul>
+                  </div>
+              </div>
+            </div>
+
+            <div className="flex items-start w-full gap-x-7 sm:gap-x-4 z-0">
+              <i className="bg-sky-500 w-fit h-fit p-2 rounded-full" />
+              <div className="w-full bg-sky-500 rounded-md">
+                <div className="p-4 text-white ">
+                  <h1 className='font-semibold text-xl'>Oxinos</h1>
+                  <p className='text-sm'>October 2023</p>
+                  <p className='mt-2'>I started my first career at Oxinos, as a Front End Website Developer.</p>
+                  <ul className='mt-2 ml-6 font-semibold'>
+                    <li className='list-disc'>Create a responsive website display dummy</li>
+                    <li className='list-disc'>Fixed the layout of an existing website dummy</li>
+                    <li className='list-disc'>Fixed the layout of an existing website dummy</li>
+                  </ul>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+      </div>
+
+      <div data-aos="fade-up">
         <section id='skills' className='mt-12 px-[8.1%]'>
           <div className="">
             <span className='relative w-fit text-xl font-semibold text-primary'>My Skills
@@ -162,36 +214,13 @@ const Home = () => {
               <div className="project-card">
                 <div className="project-layer">
                   <div className="project-layer-title">
-                    <h1>Movie Database</h1>
-                  </div>
-                </div>
-                <img src="/images/movie-db.png" className='object-fill' />
-              </div>
-
-              <div className="project-card">
-                <div className="project-layer">
-                  <div className="project-layer-title">
-                    <h1>Portofolio Website v1</h1>
-                  </div>
-                </div>
-                <img src="/images/porto-1.png" className='object-fill' />
-              </div>
-
-              <div className="project-card">
-                <div className="project-layer">
-                  <div className="project-layer-title">
-                    <h1>Portofolio Website v2</h1>
-                  </div>
-                </div>
-                <img src="/images/porto-2.png" className='object-fill' />
-              </div>
-
-              <div className="project-card">
-                <div className="project-layer">
-                  <div className="project-layer-title">
                     <h1>Portofolio Website v3</h1>
                   </div>
                 </div>
+                  {/* <div className="project-link absolute flex justify-end gap-x-2 right-0 top-0 p-2">
+                    <CodeIcon />
+                    <ExportIcon />
+                  </div> */}
                 <img src="/images/porto-3.png" className='object-fill' />
               </div>
 
