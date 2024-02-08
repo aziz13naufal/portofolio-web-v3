@@ -28,12 +28,61 @@ import FileCodeIcon from '@/public/svgs/code'
 import GlobeIcon from '@/public/svgs/globe'
 import ExportIcon from '@/public/svgs/export'
 import CodeIcon from '@/public/svgs/code'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
   const [responsiveDev, setResponsiveDev] = useState<boolean>(false);
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
   // const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChangeInput = (e: any) => {
+    const { name, value } = e.target;
+    setForm({...form, [name]: value});
+  }
+  
+  const handleSendMessage = async (e: any) => {
+    e.preventDefault();
+    const token = `6711637135:AAF2r4RjoLshZ6wsFkjnzEMw7o7huTS7NSk`
+    const groupId = `-4144041861`
+    const url = `https://api.telegram.org/bot${token}/sendMessage`
+
+    try {
+      axios.post(url, { chat_id: groupId, text: `Nama: ${form?.name}\nEmail: ${form?.email}\nPesan: ${form?.message}` })
+      toast.success('Successfully sent!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+      setForm({...form, message: ''})
+    } catch (error) {
+      toast.error('Failed to send!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+    }
+  }
+
+  
+  console.log(form)
 
   const navbarHandler = () => {
     if(window.scrollY > 250) {
@@ -57,9 +106,9 @@ const Home = () => {
 
   return (
     <div className={`relative ${responsiveDev && "xl:bg-red-200 lg:bg-blue-200 md:bg-red-200 sm:bg-blue-200"}`}>
-      {/* ignore this shit */}
       <section id='home' className="">
-        <div id="responsive-dev" className="w-[30px] h-[30px] bg-zinc-700 cursor-pointer bottom-0 left-0 ml-4 mb-4 fixed z-30" onClick={() => setResponsiveDev(!responsiveDev)}>
+        {/* ignore this shit */}
+        <div id="responsive-dev" className="hidden w-[30px] h-[30px] bg-zinc-700 cursor-pointer bottom-0 left-0 ml-4 mb-4 fixed z-30" onClick={() => setResponsiveDev(!responsiveDev)}>
         </div>
 
         <div className={`px-[8.1%] w-full relative ${showNavbar && 'py-[34px]'}`}>
@@ -141,9 +190,9 @@ const Home = () => {
                   <p className='text-sm'>October 2023</p>
                   <p className='mt-2'>I started my first career at Oxinos, as a Front End Website Developer.</p>
                   <ul className='mt-2 ml-6 font-semibold'>
-                    <li className='list-disc'>Create a responsive website display dummy</li>
-                    <li className='list-disc'>Fixed the layout of an existing website dummy</li>
-                    <li className='list-disc'>Fixed the layout of an existing website dummy</li>
+                    <li className='list-disc'>At first I applied for an internship as a Front End for 3 months, after which the company recruited me to become its employee with a 1-year employment contract.</li>
+                    <li className='list-disc'>Here I do slicing and integration to create an admin panel {`(CMS)`} for the website: <span className='underline italic font-medium'>Dispusipda</span>, <span className='underline italic font-medium'>Lovie</span>, <span className='underline italic font-medium'>Orderia</span>, <span className='underline italic font-medium'>Odigital</span></li>
+                    <li className='list-disc'>And currently I am still working here</li>
                   </ul>
                   </div>
               </div>
@@ -193,23 +242,27 @@ const Home = () => {
           <div className="flex flex-row gap-x-5">
             <div className="projects mt-12">
 
-              <div className="project-card">
-                <div className="project-layer">
-                  <div className="project-layer-title">
-                    <h1>Kira Website</h1>
+              <a href="https://kira-website.vercel.app/" target='_blank' rel='noreferrer'>
+                <div className="project-card">
+                  <div className="project-layer">
+                    <div className="project-layer-title">
+                      <h1>Kira Website</h1>
+                    </div>
                   </div>
+                  <img src="/images/kira-website.png" className='object-fill' />
                 </div>
-                <img src="/images/kira-website.png" className='object-fill' />
-              </div>
+              </a>
 
-              <div className="project-card">
-                <div className="project-layer">
-                  <div className="project-layer-title">
-                    <h1>MR TOP UP</h1>
+              <a href="https://mr-top-up.vercel.app/" target='_blank' rel='noreferrer'>
+                <div className="project-card">
+                  <div className="project-layer">
+                    <div className="project-layer-title">
+                      <h1>MR TOP UP</h1>
+                    </div>
                   </div>
+                  <img src="/images/mrtopup.png" className='object-fill' />
                 </div>
-                <img src="/images/mrtopup.png" className='object-fill' />
-              </div>
+              </a>
 
               <div className="project-card">
                 <div className="project-layer">
@@ -217,11 +270,16 @@ const Home = () => {
                     <h1>Portofolio Website v3</h1>
                   </div>
                 </div>
-                  {/* <div className="project-link absolute flex justify-end gap-x-2 right-0 top-0 p-2">
-                    <CodeIcon />
-                    <ExportIcon />
-                  </div> */}
                 <img src="/images/porto-3.png" className='object-fill' />
+              </div>
+
+              <div className="project-card">
+                <div className="project-layer">
+                  <div className="project-layer-title">
+                    <h1>Orderia {`(CMS)`}</h1>
+                  </div>
+                </div>
+                <img src="/images/orderia-cms.png" className='object-fill' />
               </div>
 
             </div>
@@ -258,36 +316,36 @@ const Home = () => {
             </div>
         </div>
 
-        <div className="form mt-12">
+        <form className="form mt-12" onSubmit={handleSendMessage}>
           <div className="flex flex-row w-full gap-x-4 lg:flex-col lg:gap-y-3">
             <div className="w-full">
               <label htmlFor="">Name</label>
-              <input type="text" name='name' placeholder='Enter Name' />
+              <input type="text" name='name' value={form?.name} onChange={handleChangeInput} placeholder='Enter Name' />
             </div>
 
             <div className="w-full">
               <label htmlFor="">Email</label>
-              <input type="text" name='email' placeholder='Enter Email' />
+              <input type="email" name='email' value={form?.email} onChange={handleChangeInput} placeholder='Enter Email' />
             </div>
           </div>
 
           <div className="mt-4">
             <label htmlFor="">Message</label>
-            <textarea name="message" cols={10} rows={7} placeholder='Enter Message' />
+            <textarea name="message" cols={10} rows={7} value={form?.message} onChange={handleChangeInput} placeholder='Enter Message' />
           </div>
 
           <div className="flex w-full justify-end">
-            <button className='flex flex-row gap-x-2 border border-zinc-500 mt-4 rounded-md px-3 py-2 bg-[#cbd8eb] hover:bg-[#b3c3da]'>
+            <button type={`${!form.name || !form.email || !form.message ? 'button' : 'submit' }`} className={`focus:outline-none flex flex-row gap-x-2 border border-zinc-500 mt-4 rounded-md px-3 py-2 bg-[#cbd8eb] ${!form.name || !form.email || !form.message ? 'opacity-60 cursor-not-allowed' : 'hover:bg-[#b3c3da]' }`}>
               <span>Send Message</span>
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                 <path d="M120-160v-240l320-80-320-80v-240l760 320-760 320Z" />
               </svg>
             </button>
           </div>
-        </div>
+        </form>
 
       </section>
-
+      <ToastContainer />
     </div>
   )
 }
