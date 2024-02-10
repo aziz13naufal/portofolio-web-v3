@@ -35,13 +35,29 @@ import 'react-toastify/dist/ReactToastify.css';
 const Home = () => {
   const [responsiveDev, setResponsiveDev] = useState<boolean>(false);
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
-  // const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
+  const [countdown, setCountdown] = useState(0);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCountdown((prevCountdown) => {
+        if (prevCountdown === 0) {
+          clearInterval(intervalId); 
+          return 0; 
+                }
+        return prevCountdown - 1; 
+      });
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [countdown]);
+  console.log(isFormSubmitted)
   const [form, setForm] = useState({
     name: '',
     email: '',
     message: '',
   });
+  
 
   const handleChangeInput = (e: any) => {
     const { name, value } = e.target;
@@ -54,35 +70,46 @@ const Home = () => {
     const groupId = `-4144041861`
     const url = `https://api.telegram.org/bot${token}/sendMessage`
 
-    try {
-      axios.post(url, { chat_id: groupId, text: `Nama: ${form?.name}\nEmail: ${form?.email}\nPesan: ${form?.message}` })
-      toast.success('Successfully sent!', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      });
-      setForm({...form, message: ''})
-    } catch (error) {
-      toast.error('Failed to send!', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      });
+    if(countdown <= 0) {
+      try {
+        axios.post(url, { chat_id: groupId, text: `Nama: ${form?.name}\nEmail: ${form?.email}\nPesan: ${form?.message}` })
+        toast.success('Successfully sent!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+        setForm({...form, name: '', email: '', message: ''})
+        setCountdown(30)
+      } catch (error) {
+        toast.error('Failed to send!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+      }
+    } else {
+      toast.error(`Please wait for ${countdown} seconds to send the message again!`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
   }
-
-  
-  console.log(form)
 
   const navbarHandler = () => {
     if(window.scrollY > 250) {
@@ -117,7 +144,7 @@ const Home = () => {
 
         <div className='mt-12 px-[8.1%]'>
           <div className="bg-zinc-200 w-full h-[300px] object-cover ">
-            <img src="/images/kaneki.jpeg" alt="bg" className='w-full h-[300px] object-cover' />
+            <img src="/images/ghibli.jpg" alt="bg" className='w-full h-[300px] object-cover' />
             {/* <img src="/gifs/goku-kid.gif" alt="bg" className='w-full h-[300px] object-cover' /> */}
             {/* <video src="/gifs/gohanssj2.mp4" autoPlay loop muted className='w-full h-[300px] object-cover' /> */}
           </div>
@@ -174,8 +201,7 @@ const Home = () => {
                   <p className='text-sm'>June 2023</p>
                   <p className='mt-2'>Freelance as a Front End Website Developer.</p>
                   <ul className='mt-2 ml-6 font-semibold'>
-                    <li className='list-disc'>Create a responsive website display</li>
-                    <li className='list-disc'>Fixed the layout of an existing website</li>
+                    <li className='list-disc'>Create a responsive <span className='italic underline'>MR TOP UP</span> website</li>
                     <li className='list-disc'>Fixed the layout of an existing website</li>
                   </ul>
                   </div>

@@ -13,11 +13,12 @@
 }
 
 .masking {
-    background: url("/images/kaneki.jpeg") no-repeat center;
+    background: url("/images/aziz-smile.jpg") no-repeat center;
     background-size: cover;
     mask-image: url(/svgs/blob2.svg);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+    @apply drop-shadow
 }
 
 .skill-card {
