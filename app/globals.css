@@ -13,7 +13,7 @@
 }
 
 .masking {
-    background: url("/images/aziz-smile.jpg") no-repeat center;
+    background: url("/images/N-2.jpg") no-repeat center;
     background-size: cover;
     mask-image: url(/svgs/blob2.svg);
     -webkit-mask-repeat: no-repeat;

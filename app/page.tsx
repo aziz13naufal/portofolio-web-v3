@@ -144,7 +144,7 @@ const Home = () => {
 
         <div className='mt-12 px-[8.1%]'>
           <div className="bg-zinc-200 w-full h-[300px] object-cover ">
-            <img src="/images/ghibli.jpg" alt="bg" className='w-full h-[300px] object-cover' />
+            <img src="/images/N-2.jpg" alt="bg" className='w-full h-[300px] object-cover' />
             {/* <img src="/gifs/goku-kid.gif" alt="bg" className='w-full h-[300px] object-cover' /> */}
             {/* <video src="/gifs/gohanssj2.mp4" autoPlay loop muted className='w-full h-[300px] object-cover' /> */}
           </div>
