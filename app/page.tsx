@@ -243,7 +243,7 @@ const Home = () => {
             <JSIcon className='w-[133px] h-[133px] -ml-3' />
             <TSIcon className='w-[133px] h-[133px] -ml-2' />
 
-            <ExpressJsIcon className="border border-zinc-300 bg-zinc-100 p-2 ml-2" />
+            <ExpressJsIcon className="border border-zinc-300 bg-zinc-100 p-2 ml-2 hidden" />
             <ReactIcon className="w-32 h-32 ml-1" />
             <NextJsIcon className="w-28 h-28 -ml-2" />
             
