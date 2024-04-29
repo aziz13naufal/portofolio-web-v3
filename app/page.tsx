@@ -203,8 +203,8 @@ const Home = () => {
                   <p className='text-sm'>June 2023</p>
                   <p className='mt-2'>Front End Web Developer Freelance</p>
                   <ul className='mt-2 ml-6 font-semibold'>
-                    <li className='list-disc'>Create a responsive <span className='italic underline'>MR TOP UP</span> website</li>
-                    <li className='list-disc'>Fixed the layout of an existing website</li>
+                    <li className='list-disc'>Creating a Responsive Website Interface {`(MR TOP UP)`}</li>
+                    <li className='list-disc'>Fixing Bug Interfaces on X45 Website {`(Top Up Website)`}</li>
                   </ul>
                 </div>
               </div>
