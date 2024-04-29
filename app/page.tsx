@@ -218,9 +218,9 @@ const Home = () => {
                   <p className='text-sm'>October 2023</p>
                   <p className='mt-2'>Front End Web Developer Internship</p>
                   <ul className='mt-2 ml-6 font-semibold'>
-                    <li className='list-disc'>{`Build Control Management System (CMS) Website for Dispusipda (Discussion
+                    <li className='list-disc'>{`Build Control Management System (CMS) Website for Oxinos (Company Profile), Dispusipda (Discussion
                       related to Literacy/Books), Lovie (Health), Orderia (Restaurant Reservation), Odigital
-                      (e-commerce Digital Items such as Licensed Applications etc.).`}</li>
+                      (e-commerce Digital Items such as Licensed Applications etc.), IFG Life (Assurance).`}</li>
                     <li className='list-disc'>After 3 months of internship and 2 months of probation, I received a job offer/contract
                       from this office. However, I could not take the contract offer because there were
                       things that were not suitable for me.</li>
