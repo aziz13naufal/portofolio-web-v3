@@ -1,86 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-    font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
-.navbar nav ul{
-    transition: all 0.2s ease-in-out;
-    /* @apply  */
+.navbar nav ul {
+  transition: all 0.2s ease-in-out;
+  /* @apply  */
 }
 
 .masking {
-    background: url("/images/N-2.jpg") no-repeat center;
-    background-size: cover;
-    mask-image: url(/svgs/blob2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    @apply drop-shadow
+  background: url("/images/aziz-1.jpg") no-repeat center;
+  background-size: cover;
+  mask-image: url(/svgs/blob2.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  @apply drop-shadow;
 }
 
 .skill-card {
-    @apply bg-[#F1F5FB] h-[130px] w-max overflow-x-auto flex flex-row py-6 px-6 rounded-md
+  @apply bg-[#F1F5FB] h-[130px] w-max overflow-x-auto flex flex-row py-6 px-6 rounded-md;
 }
 
 .skill-card img {
-    transition: all 0.2s ease-in-out;
-    @apply saturate-0 hover:saturate-100 hover:scale-105
+  transition: all 0.2s ease-in-out;
+  @apply saturate-0 hover:saturate-100 hover:scale-105;
 }
 
 .projects {
-    @apply columns-3 lg:columns-2 sm:columns-1
+  @apply columns-3 lg:columns-2 sm:columns-1;
 }
 
 .project-card {
-    @apply bg-zinc-800 rounded-md overflow-hidden h-fit border mb-4 relative 
+  @apply bg-zinc-800 rounded-md overflow-hidden h-fit border mb-4 relative;
 }
 
 .project-layer {
-    transition: all 0.2s ease-in-out;
-    @apply bg-gradient-to-t from-zinc-900 to-[rgba(0,0,0,0)] w-full h-full absolute hover:opacity-0
+  transition: all 0.2s ease-in-out;
+  @apply bg-gradient-to-t from-zinc-900 to-[rgba(0,0,0,0)] w-full h-full absolute hover:opacity-0;
 }
 
 .project-layer-title {
-    @apply absolute bottom-0 left-0 text-white mb-3 ml-3
+  @apply absolute bottom-0 left-0 text-white mb-3 ml-3;
 }
 
 .form input,
 .form textarea {
-    @apply border focus:outline-none py-2 px-3 rounded-md bg-white w-full border-zinc-400 focus:border-zinc-600
+  @apply border focus:outline-none py-2 px-3 rounded-md bg-white w-full border-zinc-400 focus:border-zinc-600;
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  width: 10px;
+  height: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #88c6b9;
+  background: #88c6b9;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #6b9b91;
+  background: #6b9b91;
 }
 
 .navbar nav ul li::before {
-        @apply absolute bottom-0 left-0 content-[""] h-0 w-0 duration-500 border-b border-b-zinc-500
-    }
+  @apply absolute bottom-0 left-0 content-[""] h-0 w-0 duration-500 border-b border-b-zinc-500;
+}
 
 .navbar nav ul li:hover::before {
-        width: 100%;
+  width: 100%;
 }
 
 .navbar nav ul .active::before {
-        @apply  w-full
+  @apply w-full;
 }

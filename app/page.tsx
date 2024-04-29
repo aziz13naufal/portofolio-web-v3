@@ -42,10 +42,10 @@ const Home = () => {
     const intervalId = setInterval(() => {
       setCountdown((prevCountdown) => {
         if (prevCountdown === 0) {
-          clearInterval(intervalId); 
-          return 0; 
-                }
-        return prevCountdown - 1; 
+          clearInterval(intervalId);
+          return 0;
+        }
+        return prevCountdown - 1;
       });
     }, 1000);
 
@@ -57,44 +57,44 @@ const Home = () => {
     email: '',
     message: '',
   });
-  
+
 
   const handleChangeInput = (e: any) => {
     const { name, value } = e.target;
-    setForm({...form, [name]: value});
+    setForm({ ...form, [name]: value });
   }
-  
+
   const handleSendMessage = async (e: any) => {
     e.preventDefault();
     const token = `6711637135:AAF2r4RjoLshZ6wsFkjnzEMw7o7huTS7NSk`
     const groupId = `-4144041861`
     const url = `https://api.telegram.org/bot${token}/sendMessage`
 
-    if(countdown <= 0) {
+    if (countdown <= 0) {
       try {
         axios.post(url, { chat_id: groupId, text: `Nama: ${form?.name}\nEmail: ${form?.email}\nPesan: ${form?.message}` })
         toast.success('Successfully sent!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
         });
-        setForm({...form, name: '', email: '', message: ''})
+        setForm({ ...form, name: '', email: '', message: '' })
         setCountdown(30)
       } catch (error) {
         toast.error('Failed to send!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
         });
       }
     } else {
@@ -107,12 +107,12 @@ const Home = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     }
   }
 
   const navbarHandler = () => {
-    if(window.scrollY > 250) {
+    if (window.scrollY > 250) {
       setShowNavbar(true)
     } else {
       setShowNavbar(false)
@@ -139,19 +139,19 @@ const Home = () => {
         </div>
 
         <div className={`px-[8.1%] w-full relative ${showNavbar && 'py-[34px]'}`}>
-          <Navbar showNavbar={showNavbar}/>
+          <Navbar showNavbar={showNavbar} />
         </div>
 
         <div className='mt-12 px-[8.1%]'>
-          <div className="bg-zinc-200 w-full h-[300px] object-cover ">
-            <img src="/images/N-2.jpg" alt="bg" className='w-full h-[300px] object-cover' />
+          <div className="bg-zinc-200 w-full h-[300px] object-cover">
+            <img src="/images/aziz-2.jpg" alt="bg" className='w-full h-[300px] object-cover' />
             {/* <img src="/gifs/goku-kid.gif" alt="bg" className='w-full h-[300px] object-cover' /> */}
             {/* <video src="/gifs/gohanssj2.mp4" autoPlay loop muted className='w-full h-[300px] object-cover' /> */}
           </div>
 
           <div className="w-full mt-4">
             <p className='text-xl font-semibold text-[#5F5F5F]'>Hello everyone, welcome to my portfolio website!</p>
-            <p className='text-lg text-primary'>And I am a&nbsp; 
+            <p className='text-lg text-primary'>And I am a&nbsp;
               <span className='relative w-fit'>Front End Website Developer.
                 <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
               </span>
@@ -172,7 +172,9 @@ const Home = () => {
             </span>
 
             <div className="text-lg text-[#5F5F5F] mt-6">
-              <p>I really like the look of a design, and for me front end website developer is a field of expertise that I am very interested in. And for now, the framework that I really like is NEXTJS. Because it makes the development process easier. I hope I can continue to grow and seek more inspiration.</p>
+              <p>I am a Front End Website Developer {`(Typescript)`}, I am deeply passionate about the pursuit
+                of design perfection. My aspiration is to keep growing, honing my skills to create apps that
+                are not just for me, but can also be useful for everyone.</p>
 
               <p className='mt-2'>Other than that, about myself, I was born on August 14, 2001 in Bandung.</p>
 
@@ -186,7 +188,7 @@ const Home = () => {
         <section id='experience' className='mt-12 px-[8.1%]'>
           <div className="">
             <span className='relative w-fit text-xl font-semibold text-primary'>My Experience
-                <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
+              <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
             </span>
           </div>
 
@@ -199,12 +201,12 @@ const Home = () => {
                 <div className="p-4 text-white ">
                   <h1 className='font-semibold text-xl'>Host Data</h1>
                   <p className='text-sm'>June 2023</p>
-                  <p className='mt-2'>Freelance as a Front End Website Developer.</p>
+                  <p className='mt-2'>Front End Web Developer Freelance</p>
                   <ul className='mt-2 ml-6 font-semibold'>
                     <li className='list-disc'>Create a responsive <span className='italic underline'>MR TOP UP</span> website</li>
                     <li className='list-disc'>Fixed the layout of an existing website</li>
                   </ul>
-                  </div>
+                </div>
               </div>
             </div>
 
@@ -214,13 +216,16 @@ const Home = () => {
                 <div className="p-4 text-white ">
                   <h1 className='font-semibold text-xl'>Oxinos</h1>
                   <p className='text-sm'>October 2023</p>
-                  <p className='mt-2'>I started my first career at Oxinos, as a Front End Website Developer.</p>
+                  <p className='mt-2'>Front End Web Developer Internship</p>
                   <ul className='mt-2 ml-6 font-semibold'>
-                    <li className='list-disc'>At first I applied for an internship as a Front End for 3 months, after which the company recruited me to become its employee with a 1-year employment contract.</li>
-                    <li className='list-disc'>Here I do slicing and integration to create an admin panel {`(CMS)`} for the website: <span className='underline italic font-medium'>Dispusipda</span>, <span className='underline italic font-medium'>Lovie</span>, <span className='underline italic font-medium'>Orderia</span>, <span className='underline italic font-medium'>Odigital</span></li>
-                    <li className='list-disc'>And currently I am still working here</li>
+                    <li className='list-disc'>{`Build Control Management System (CMS) Website for Dispusipda (Discussion
+                      related to Literacy/Books), Lovie (Health), Orderia (Restaurant Reservation), Odigital
+                      (e-commerce Digital Items such as Licensed Applications etc.).`}</li>
+                    <li className='list-disc'>After 3 months of internship and 2 months of probation, I received a job offer/contract
+                      from this office. However, I could not take the contract offer because there were
+                      things that were not suitable for me.</li>
                   </ul>
-                  </div>
+                </div>
               </div>
             </div>
 
@@ -233,7 +238,7 @@ const Home = () => {
         <section id='skills' className='mt-12 px-[8.1%]'>
           <div className="">
             <span className='relative w-fit text-xl font-semibold text-primary'>My Skills
-                <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
+              <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
             </span>
           </div>
 
@@ -246,7 +251,7 @@ const Home = () => {
             <ExpressJsIcon className="border border-zinc-300 bg-zinc-100 p-2 ml-2 hidden" />
             <ReactIcon className="w-32 h-32 ml-1" />
             <NextJsIcon className="w-28 h-28 -ml-2" />
-            
+
             <TailwindCSSIcon className="ml-2 w-32 h-32" />
             <BootstrapIcon className="w-32 h-32 ml-2" />
 
@@ -261,7 +266,7 @@ const Home = () => {
         <section id='projects' className='mt-12 px-[8.1%]'>
           <div className="">
             <span className='relative w-fit text-xl font-semibold text-primary'>My Projects
-                <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
+              <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
             </span>
           </div>
 
@@ -316,30 +321,30 @@ const Home = () => {
       <section id='contact' className='mt-12 px-[8.1%] bg-[#F1F5FB] py-10'>
         <div className="">
           <span className='relative w-fit text-xl font-semibold text-primary'>Contact Me
-              <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
+            <span className='absolute w-full h-[5px] bg-sky-500 opacity-30 left-0 right-0 bottom-0 mb-1'></span>
           </span>
         </div>
 
         <div className="mt-12 text-lg text-[#5F5F5F]">
-            <p>I'm excited to connect with everyone, so please don't hesitate to get in touch with me by following my social media bellow:</p>
+          <p>I'm excited to connect with everyone, so please don't hesitate to get in touch with me by following my social media bellow:</p>
 
-            <div className="mt-6 flex flex-row gap-x-3">
-              <a href='mailto:aziz13naufal@gmail.com' target='_blank' className=''>
-                <GmailSVG />
-              </a>
-              <a href='https://github.com/aziz13naufal' target='_blank'>
-                <Github />
-              </a>
-              <a href='https://www.fb.me/aziz.naufal.129' target='_blank' className='-ml-[3px] -mt-[2px]'>
-                <Facebook />
-              </a>
-              <a href='https://www.instagram.com/aziz.naufall' target='_blank' className='-ml-[3px]'>
-                <Instagram />
-              </a>
-              <a href='https://www.t.me/AzizNaufal' target='_blank' className='-ml-[2px] mt-[1px]'>
-                <Telegram />
-              </a>
-            </div>
+          <div className="mt-6 flex flex-row gap-x-3">
+            <a href='mailto:aziz13naufal@gmail.com' target='_blank' className=''>
+              <GmailSVG />
+            </a>
+            <a href='https://github.com/aziz13naufal' target='_blank'>
+              <Github />
+            </a>
+            <a href='https://www.fb.me/aziz.naufal.129' target='_blank' className='-ml-[3px] -mt-[2px]'>
+              <Facebook />
+            </a>
+            <a href='https://www.instagram.com/aziz.naufall' target='_blank' className='-ml-[3px]'>
+              <Instagram />
+            </a>
+            <a href='https://www.t.me/AzizNaufal' target='_blank' className='-ml-[2px] mt-[1px]'>
+              <Telegram />
+            </a>
+          </div>
         </div>
 
         <form className="form mt-12" onSubmit={handleSendMessage}>
@@ -361,7 +366,7 @@ const Home = () => {
           </div>
 
           <div className="flex w-full justify-end">
-            <button type={`${!form.name || !form.email || !form.message ? 'button' : 'submit' }`} className={`focus:outline-none flex flex-row gap-x-2 border border-zinc-500 mt-4 rounded-md px-3 py-2 bg-[#cbd8eb] ${!form.name || !form.email || !form.message ? 'opacity-60 cursor-not-allowed' : 'hover:bg-[#b3c3da]' }`}>
+            <button type={`${!form.name || !form.email || !form.message ? 'button' : 'submit'}`} className={`focus:outline-none flex flex-row gap-x-2 border border-zinc-500 mt-4 rounded-md px-3 py-2 bg-[#cbd8eb] ${!form.name || !form.email || !form.message ? 'opacity-60 cursor-not-allowed' : 'hover:bg-[#b3c3da]'}`}>
               <span>Send Message</span>
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                 <path d="M120-160v-240l320-80-320-80v-240l760 320-760 320Z" />
